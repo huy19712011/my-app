@@ -11,10 +11,16 @@ function App() {
     { title: 'Car Insurance 3', amount: 293.67, date: new Date(2021, 7, 16) },
     { title: 'Car Insurance 4', amount: 294.67, date: new Date(2021, 7, 16) },
   ];
+
+  const addExpenseHandler = expense => {
+
+    console.log('In App.js');
+    console.log(expense);
+  };
  
   return (
     <div className="App">
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       <Expenses items={expenses}></Expenses>
     </div>
   );
