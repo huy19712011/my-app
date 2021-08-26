@@ -5,6 +5,7 @@ import './Expenses.css';
 import Card from './../ui/Card';
 import ExpenseFilter from "./ExpenseFilter";
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 
 function Expenses(props) {
 
@@ -50,6 +51,8 @@ function Expenses(props) {
         } */}
 
         {/* {expensesContent} */}
+
+        <ExpensesChart expenses={filteredExpenses} />
 
         <ExpensesList items={filteredExpenses} />
 
