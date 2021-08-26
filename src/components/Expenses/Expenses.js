@@ -4,6 +4,7 @@ import ExpenseItem from "./ExpenseItem";
 import './Expenses.css';
 import Card from './../ui/Card';
 import ExpenseFilter from "./ExpenseFilter";
+import ExpensesList from './ExpensesList';
 
 function Expenses(props) {
 
@@ -18,16 +19,16 @@ function Expenses(props) {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
-  let expensesContent = <p>No Expenses found.</p>;
-  if (filteredExpenses.length > 0) {
-    expensesContent = filteredExpenses.map(expense => (
-      <ExpenseItem
-        key={expense.id}
-        title={expense.title}
-        amount={expense.amount}
-        date={expense.date} />
-    ));
-  }
+  // let expensesContent = <p>No Expenses found.</p>;
+  // if (filteredExpenses.length > 0) {
+  //   expensesContent = filteredExpenses.map(expense => (
+  //     <ExpenseItem
+  //       key={expense.id}
+  //       title={expense.title}
+  //       amount={expense.amount}
+  //       date={expense.date} />
+  //   ));
+  // }
 
   return (
     <div>
@@ -48,7 +49,9 @@ function Expenses(props) {
           ))
         } */}
 
-        {expensesContent}
+        {/* {expensesContent} */}
+
+        <ExpensesList items={filteredExpenses} />
 
       </Card>
     </div>
